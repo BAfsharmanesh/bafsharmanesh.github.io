@@ -7,80 +7,274 @@
     <link rel="stylesheet" href="https://latex.now.sh/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* ===== CSS Variables & Color Schemes ===== */
+        :root {
+            /* Light mode colors */
+            --bg-color: #fefefe;
+            --text-color: #000000;
+            --text-secondary: #666666;
+            --link-color: #0066cc;
+            --border-color: #eee;
+            --footer-border: #ccc;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Dark mode colors */
+                --bg-color: #1a1a1a;
+                --text-color: #e0e0e0;
+                --text-secondary: #b0b0b0;
+                --link-color: #4d9fff;
+                --border-color: #333;
+                --footer-border: #555;
+            }
+            
+            .latex-dark {
+                background-color: var(--bg-color);
+                color: var(--text-color);
+            }
+        }
+
+        /* ===== Base Styles ===== */
         body {
             font-family: 'Computer Modern Serif', serif;
             max-width: 900px;
             margin: 0 auto;
             padding: 2rem 1rem;
             line-height: 1.6;
-            background-color: #fefefe;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
+        /* ===== Typography ===== */
         h1 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
             font-weight: normal;
         }
+
         h2 {
             font-size: 1.5rem;
             margin-top: 3rem;
             margin-bottom: 1rem;
             font-weight: normal;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.5rem;
         }
+
         h3 {
             font-size: 1.2rem;
             margin-top: 2rem;
             margin-bottom: 0.5rem;
             font-weight: normal;
         }
+
+        a {
+            color: var(--link-color);
+            transition: color 0.3s ease;
+        }
+
+        /* ===== Introduction Section ===== */
         .intro {
             margin-bottom: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
         }
+
+        .intro-content {
+            flex: 1;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== Navigation Links ===== */
         .links {
             margin-bottom: 2rem;
+            text-align: center;
         }
+
         .links a {
-            margin-right: 1rem;
+            margin: 0 0.75rem;
             white-space: nowrap;
         }
-        .publication {
-            margin-bottom: 2rem;
+
+        .links .separator {
+            margin: 0 0.5rem;
+            color: var(--text-secondary);
         }
-        .publication-title {
-            font-weight: bold;
-            color: #0066cc;
-            text-decoration: none;
+
+        /* ===== Publications Table ===== */
+        .publications-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
         }
-        .publication-title:hover {
-            text-decoration: underline;
+
+        .publications-table td {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
         }
+
+        .publications-table td:last-child {
+            border-bottom: none;
+        }
+
+        .publication-row {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .publication-year {
+            grid-column: 1;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .publication-details {
+            grid-column: 2;
+            line-height: 1.7;
+        }
+
         .publication-authors {
-            font-style: italic;
-            margin-top: 0.25rem;
+            color: var(--text-color);
         }
-        .publication-venue {
-            margin-top: 0.25rem;
-        }
-        .experience-item, .education-item {
-            margin-bottom: 1.5rem;
-        }
-        .date {
-            color: #666;
+
+        .publication-title-inline {
+            font-weight: bold;
             font-style: italic;
         }
-        .position-title {
+
+        .publication-venue-inline {
+            color: var(--text-secondary);
+        }
+
+        /* ===== Experience & Education Tables ===== */
+        .education-table, .experience-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .education-table td, .experience-table td {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .education-table td:last-child, .experience-table td:last-child {
+            border-bottom: none;
+        }
+
+        .education-row, .experience-row {
+            display: grid;
+            grid-template-columns: 1.2fr 2.2fr 1.6fr;
+            grid-template-rows: auto;
+            gap: 0.25rem;
+            width: 100%;
+        }
+
+        .education-year, .experience-year {
+            grid-column: 1;
+            grid-row: 1;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .education-degree, .experience-title {
+            grid-column: 2;
+            grid-row: 1;
             font-weight: bold;
         }
+
+        .education-university, .experience-company {
+            grid-column: 3;
+            grid-row: 1;
+            text-align: right;
+        }
+
+        /* ===== Utility Classes ===== */
         .organization {
-            color: #0066cc;
+            color: var(--link-color);
             text-decoration: none;
         }
+
         .organization:hover {
             text-decoration: underline;
         }
-        a {
-            color: #0066cc;
+
+        /* ===== Footer ===== */
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--footer-border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            .intro {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-pic {
+                align-self: center;
+                width: 150px;
+                height: 150px;
+            }
+
+            .education-row, .experience-row {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                text-align: left;
+            }
+
+            .education-year, .experience-year {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .education-degree, .experience-title {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .education-university, .experience-company {
+                grid-column: 1;
+                grid-row: 3;
+                text-align: left;
+            }
+
+            .publication-row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .publication-year {
+                grid-column: 1;
+            }
+
+            .publication-details {
+                grid-column: 1;
+            }
         }
     </style>
 </head>
@@ -91,54 +285,183 @@
 
     <main>
         <section class="intro">
-            <p>
-                I am a 3rd year PhD student in Computer Science at the University of Georgia. My research focuses on 
-                advancing computational methods and their applications in various domains.
-            </p>
-            <p>
-                My work encompasses multiple areas of computer science research, contributing to both theoretical 
-                foundations and practical applications. I am passionate about solving complex computational problems 
-                and developing innovative solutions.
-            </p>
+            <div class="intro-content">
+                <p>
+                    I am a 3rd year PhD student in Computer Science at the University of Georgia. My research focuses on 
+                    advancing computational methods and their applications in various domains.
+                </p>
+                <p>
+                    My work encompasses multiple areas of computer science research, contributing to both theoretical 
+                    foundations and practical applications. I am passionate about solving complex computational problems 
+                    and developing innovative solutions.
+                </p>
+            </div>
+            <img src="artifacts/personal_pic.jpeg" alt="Bahram Afsharmanesh" class="profile-pic">
         </section>
 
         <div class="links">
-            <a href="https://scholar.google.com/citations?user=BLylTOYAAAAJ&hl=en">Google Scholar</a> /
-            <a href="https://www.linkedin.com/in/bahram-afsharmanesh/">LinkedIn</a> /
+            <a href="https://scholar.google.com/citations?user=BLylTOYAAAAJ&hl=en">Google Scholar</a>
+            <span class="separator">/</span>
+            <a href="https://www.linkedin.com/in/bahram-afsharmanesh/">LinkedIn</a>
+            <span class="separator">/</span>
             <a href="mailto:bahram.afsharmanesh@uga.edu">Email</a>
         </div>
 
-        <section>
-            <h2>Publications</h2>
-            <p>
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            
+            <table class="publications-table">
+                <tr>
+                    <td>
+                        <div class="publication-row">
+                            <div class="publication-year">2026</div>
+                            <div class="publication-details">
+                                <span class="publication-authors">Bahram Afsharmanesh, Md Musfiqur Rahman Sanim, AmirAli Mirian, Gagan Agrawal, </span>
+                                <span class="publication-title-inline">HeteroSched: Co-Optimizing Scheduling and Parallelization for Deep Learning Workloads for Heterogeneous GPU Clusters</span>, 
+                                <span class="publication-venue-inline">Submitted to IPDPS 2026</span>.
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="publication-row">
+                            <div class="publication-year">2025</div>
+                            <div class="publication-details">
+                                <span class="publication-authors">Md Musfiqur Rahman Sanim, Zhihao Shu, Bahram Afsharmanesh, AmirAli Mirian, Jiexiong Guan, Wei Niu, Bin Ren, Gagan Agrawal, </span>
+                                <span class="publication-title-inline">Optimizing 3D Gaussian Splattering for Mobile GPUs</span>, 
+                                <span class="publication-venue-inline">PACT 2025</span>.
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="publication-row">
+                            <div class="publication-year">2026</div>
+                            <div class="publication-details">
+                                <span class="publication-authors">Amirali Mirian, Bahram Afsharmanesh, Md Musfiqur Rahman Sanim, Wei Niu, Gagan Agrawal, </span>
+                                <span class="publication-title-inline">Fast Sparse Linear algebra for LLMs with Contextual Sparsity</span>, 
+                                <span class="publication-venue-inline">Submitted to PPOPP 2026</span>.
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+            <!-- <p style="margin-top: 2rem;">
                 For a complete list of my publications, please visit my 
                 <a href="https://scholar.google.com/citations?user=BLylTOYAAAAJ&hl=en">Google Scholar profile</a>.
-            </p>
+            </p> -->
         </section>
 
-        <section>
+        <!-- <section id="research">
             <h2>Research Interests</h2>
             <p>
                 My research interests span multiple areas of computer science, with a focus on developing 
                 innovative computational methods and their practical applications. I am particularly interested 
                 in advancing the state-of-the-art in algorithmic approaches and their implementation.
             </p>
+        </section> -->
+
+        <section id="experience">
+            <h2>Experience</h2>
+            
+            <table class="experience-table">
+                <tr>
+                    <td>
+                        <div class="experience-row">
+                            <div class="experience-year">Aug 2023 – Present</div>
+                            <div class="experience-title">Research Assistant</div>
+                            <div class="experience-company"><a href="https://www.uga.edu/" class="organization">University of Georgia</a></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="experience-row">
+                            <div class="experience-year">Aug 2021 – Dec 2022</div>
+                            <div class="experience-title">Data Scientist</div>
+                            <div class="experience-company"><a href="https://baroline.net/" class="organization">Baroline</a></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="experience-row">
+                            <div class="experience-year">May 2020 – June 2021</div>
+                            <div class="experience-title">Research Assistant</div>
+                            <div class="experience-company"><a href="https://aut.ac.ir/en" class="organization">Amirkabir University of Technology</a></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="experience-row">
+                            <div class="experience-year">Jan 2016 – April 2020</div>
+                            <div class="experience-title">R&D Engineer</div>
+                            <div class="experience-company"><a href="https://mapnapars.com/en/" class="organization">MAPNA PARS Company</a></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="experience-row">
+                            <div class="experience-year">Sep 2012 – Sep 2015</div>
+                            <div class="experience-title">Research Assistant</div>
+                            <div class="experience-company"><a href="https://en.sharif.ir/" class="organization">Sharif University of Technology</a></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="experience-row">
+                            <div class="experience-year">Sep 2010 – Sep 2012</div>
+                            <div class="experience-title">Undergraduate Researcher</div>
+                            <div class="experience-company"><a href="https://iust.ac.ir/en" class="organization">Iran University of Science and Technology</a></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </section>
 
-        <section>
+        <section id="education">
             <h2>Education</h2>
             
-            <div class="education-item">
-                <div class="date">2022 - Present</div>
-                <div class="position-title">PhD in Computer Science</div>
-                <div><a href="https://www.uga.edu/" class="organization">University of Georgia</a></div>
-                <div>3rd year PhD student</div>
-            </div>
+            <table class="education-table">
+                <tr>
+                    <td>
+                        <div class="education-row">
+                            <div class="education-year">2022 - Present</div>
+                            <div class="education-degree">PhD in Computer Science</div>
+                            <div class="education-university"><a href="https://www.uga.edu/" class="organization">University of Georgia</a></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="education-row">
+                            <div class="education-year">2012 - 2014</div>
+                            <div class="education-degree">MSc in Mechanical Engineering</div>
+                            <div class="education-university"><a href="https://en.sharif.ir/" class="organization">Sharif University of Technology</a></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="education-row">
+                            <div class="education-year">2008 - 2012</div>
+                            <div class="education-degree">BSc in Mechanical Engineering</div>
+                            <div class="education-university"><a href="https://iust.ac.ir/en" class="organization">Iran University of Science and Technology</a></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </section>
     </main>
 
-    <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #ccc; color: #666; font-size: 0.9rem;">
-        <p>Hosted on GitHub Pages. Created with LaTeX.css and Bootstrap.</p>
-    </footer>
+    <!-- <footer>
+        <p>Hosted on GitHub Pages. Created with <a href="https://github.com/vincentdoerig/latex-css">LaTeX.css</a> and <a href="https://getbootstrap.com/">Bootstrap</a>.</p>
+    </footer> -->
 </body>
 </html>
