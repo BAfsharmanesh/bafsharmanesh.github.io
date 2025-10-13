@@ -1,45 +1,113 @@
-# Chirpy Starter [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)](https://rubygems.org/gems/jekyll-theme-chirpy) [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+# Your Name
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders `/_data`, `/_layouts`, `/_includes`, `/_sass` and `/assets`, as well as a small part of options of the `/_config.yml` file from the theme's gem. If you have ever installed this theme gem, you can use the command `bundle info --path jekyll-theme-chirpy` to locate these files.
+I am a [Your Title] at [Your Company/Institution]. My primary research area is [Your Research Area], which involves [brief description of your work].
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being able to enjoy the out-of-the-box experience when using feature-rich themes.
+I've been working on [Your Focus Area] since about [Year].
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your Jekyll site. The following is a list of targets:
+A large part of my work is available through [Your Project Name](https://your-project-url.com),
+an open-source project for [project description] (see my
+presentation on [Platform/Event](https://your-presentation-url.com)).
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
-```
+In our most recent paper,
+[Your Paper Title](https://arxiv.org/abs/your-paper-id),
+we discuss [brief description of the paper's contribution],
+and our proposed solutions, which involve both [approach 1], and [approach 2]
+achieving [key result].
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+[GitHub](https://github.com/yourusername) /
+[Google Scholar](https://scholar.google.com/citations?user=YOUR_ID) /
+[Twitter](https://twitter.com/yourusername) /
+[LinkedIn](https://www.linkedin.com/in/yourusername/) /
+[CV](https://yourwebsite.com/CV.pdf)
 
-## Prerequisites
+---
 
-Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of the basic environment. [Git](https://git-scm.com/) also needs to be installed.
+## Select publications
 
-## Installation
+### 2025
 
-Sign in to GitHub and [**use this template**][use-template] to generate a brand new repository and name it `USERNAME.github.io`, where `USERNAME` represents your GitHub username.
+**[Your Latest Paper Title](https://arxiv.org/abs/paper-id)**  
+Your Name, Co-Author 1, and Co-Author 2.  
+*Conference/Journal 2025.*
 
-Then clone it to your local machine and run:
+### 2024
 
-```
-$ bundle
-```
+**[Paper Title from 2024](https://arxiv.org/abs/paper-id)**  
+Your Name, Co-Author 1, Co-Author 2, and Co-Author 3.  
+*Major Conference 2024.*
 
-## Usage
+### 2023
 
-Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
+**[Paper Title from 2023](https://arxiv.org/abs/paper-id)**  
+Your Name, Co-Author 1, Co-Author 2, Co-Author 3, and Co-Author 4.  
+*Top Conference 2023.*
 
-## License
+### 2022
 
-This work is published under [MIT][mit] License.
+**[Paper Title from 2022](https://arxiv.org/abs/paper-id)**  
+Your Name, and Co-Author.  
+*Preprint.*
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[use-template]: https://github.com/cotes2020/chirpy-starter/generate
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+---
+
+## Experience
+
+**Since MM/YYYY**  
+[Company/Institution Name](https://company-url.com), [Department/Lab](https://lab-url.com)  
+*Your Title*
+
+**MM/YYYY - MM/YYYY**  
+[Institution Name](https://institution-url.com)  
+*Your Title*
+
+**MM/YYYY - MM/YYYY**  
+[Company Name](https://company-url.com), [Department](https://dept-url.com)  
+*Intern/Researcher Title*
+
+**MM/YYYY - MM/YYYY**  
+[Company Name](https://company-url.com)  
+*Your Title*
+
+**MM/YYYY - MM/YYYY**  
+[Institution Name](https://institution-url.com)  
+*Your Title*
+
+**MM/YYYY - MM/YYYY**  
+[Company Name](https://company-url.com)  
+*Your Title*
+
+**YYYY to YYYY**  
+[Institution Name](https://institution-url.com), [Center/Lab Name](https://lab-url.com)  
+*Undergraduate Researcher*
+
+---
+
+## Teaching
+
+**Semester YYYY**  
+TA, [Course Code]: [Course Name]
+
+**Semester YYYY**  
+Instructor, [Course Code]: [Course Name]
+
+**Semester YYYY, Semester YYYY, Semester YYYY**  
+TA/Instructor, [Course Code]: [Course Name]
+
+---
+
+## Education
+
+**YYYY - YYYY (expected)**  
+**PhD in Computer Science**  
+[University Name](https://university-url.com)  
+Advised by Prof. [Advisor Name](https://advisor-url.com)
+
+**YYYY-YYYY**  
+**M.S. in Computer Science**  
+[University Name](https://university-url.com)  
+Advised by Prof. [Advisor Name](https://advisor-url.com)
+
+**YYYY-YYYY**  
+**B.S. in Computer Science**  
+[University Name](https://university-url.com)  
+Research advisor: Prof. [Advisor Name](https://advisor-url.com)
