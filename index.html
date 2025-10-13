@@ -59,7 +59,7 @@
             margin-top: 3rem;
             margin-bottom: 1rem;
             font-weight: normal;
-            border-bottom: 1px solid var(--border-color);
+            /* border-bottom: 1px solid var(--border-color); */
             padding-bottom: 0.5rem;
         }
 
@@ -121,12 +121,13 @@
 
         .publications-table td {
             padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
+            /* border-bottom: 1px solid var(--border-color); */
+            border-bottom: none !important;
             vertical-align: top;
         }
 
         .publications-table td:last-child {
-            border-bottom: none;
+            border-bottom: none !important;
         }
 
         .publication-row {
@@ -169,12 +170,13 @@
 
         .education-table td, .experience-table td {
             padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
+            /* border-bottom: 1px solid var(--border-color); */
+            border-bottom: none !important;
             vertical-align: top;
         }
 
         .education-table td:last-child, .experience-table td:last-child {
-            border-bottom: none;
+            border-bottom: none !important;
         }
 
         .education-row, .experience-row {
@@ -276,6 +278,9 @@
                 grid-column: 1;
             }
         }
+
+        
+        
     </style>
 </head>
 <body>
@@ -287,13 +292,10 @@
         <section class="intro">
             <div class="intro-content">
                 <p>
-                    I am a 3rd year PhD student in Computer Science at the University of Georgia. My research focuses on 
-                    advancing computational methods and their applications in various domains.
-                </p>
-                <p>
-                    My work encompasses multiple areas of computer science research, contributing to both theoretical 
-                    foundations and practical applications. I am passionate about solving complex computational problems 
-                    and developing innovative solutions.
+                    I’m a Ph.D. candidate in Computer Science at the University of Georgia, advised by Prof. Gagan Agrawal, 
+                    where I research GPU optimization, distributed training, and large-scale deep learning systems. 
+                    My work bridges high-performance computing (HPC) and machine learning systems, focusing on optimizing model 
+                    parallelism, scheduling, and quantized communication for heterogeneous GPU clusters. I’m passionate about designing scalable, efficient ML and HPC systems that push the limits of modern GPU clusters.
                 </p>
             </div>
             <img src="artifacts/personal_pic.jpeg" alt="Bahram Afsharmanesh" class="profile-pic">
